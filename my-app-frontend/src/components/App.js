@@ -9,7 +9,7 @@ import ClientListPage from "./ClientListPage";
 import NewTherapistForm from "./NewTherapistForm";
 import NewClientForm from "./NewClientForm";
 import UpdateTherapistForClientForm from "./UpdateTherapistForClientForm";
-import Redirect from "./Redirect";
+import Redirect from "./Redirect.js";
 import ClientCard from './ClientCard';
 import TherapistCard from './TherapistCard';
 
