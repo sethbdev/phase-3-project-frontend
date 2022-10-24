@@ -1,9 +1,9 @@
 import React from 'react'
 
-const ClientList = () => {
+const ClientListPage = () => {
   return (
     <div>ClientList</div>
   )
 }
 
-export default ClientList
+export default ClientListPage

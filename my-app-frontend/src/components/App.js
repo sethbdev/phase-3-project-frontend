@@ -4,30 +4,48 @@ import { Route, Switch } from "react-router-dom";
 import "./App.css";
 import "../index.css";
 import Navbar from "./Navbar";
-import Countdown from "./Countdown";
-import CostumesPage from "./CostumesPage";
-import StoriesPage from "./StoriesPage";
-import StoriesForm from "./StoriesForm";
-import StoryDetail from "./StoryDetail";
+import TherapistListPage from "./TherapistListPage";
+import ClientListPage from "./ClientListPage";
+import NewTherapistForm from "./NewTherapistForm";
+import NewClientForm from "./NewClientForm";
+import UpdateTherapistForClientForm from "./UpdateTherapistForClientForm";
 import Redirect from "./Redirect";
+import ClientCard from './ClientCard';
+import TherapistCard from './TherapistCard';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <Switch>
+        <Route exact path="/">
+          <App />
+        </Route>
+        <Route exact path="/therapists">
+          <TherapistListPage />
+        </Route>
+        <Route exact path="/clients">
+          <ClientListPage />
+        </Route>
+        <Route exact path="/client/:id">
+          <ClientCard />
+        </Route>
+        <Route exact path="/therapist/:id">
+          <TherapistCard />
+        </Route>
+        <Route exact path="/newclient">
+          <NewClientForm />
+        </Route>
+        <Route exact path="/newtherapist">
+          <NewTherapistForm />
+        </Route>
+        <Route exact path="/updatetherapistforclientform">
+          <UpdateTherapistForClientForm />
+        </Route>
+        <Route path="*">
+          <Redirect />
+        </Route>
+      </Switch>
     </div>
   );
 }
