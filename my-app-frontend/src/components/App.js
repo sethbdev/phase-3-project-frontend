@@ -10,6 +10,8 @@ import NewTherapistForm from "./NewTherapistForm";
 import NewClientForm from "./NewClientForm";
 import UpdateTherapistForClientForm from "./UpdateTherapistForClientForm";
 import Redirect from "./Redirect";
+import ClientCard from './ClientCard';
+import TherapistCard from './TherapistCard';
 
 function App() {
   return (
@@ -26,14 +28,19 @@ function App() {
           <ClientListPage />
         </Route>
         <Route exact path="/client/:id">
-          <Client />
+          <ClientCard />
+        </Route>
         <Route exact path="/therapist/:id">
-          <Therapist />
+          <TherapistCard />
         </Route>
         <Route exact path="/newclient">
           <NewClientForm />
+        </Route>
         <Route exact path="/newtherapist">
           <NewTherapistForm />
+        </Route>
+        <Route exact path="/updatetherapistforclientform">
+          <UpdateTherapistForClientForm />
         </Route>
         <Route path="*">
           <Redirect />
