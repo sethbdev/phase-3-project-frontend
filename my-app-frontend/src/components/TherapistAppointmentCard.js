@@ -1,16 +1,11 @@
 import React from "react";
 
-function TherapistAppointmentCard({ date, time, clients, appointmentClient }) {
-  const foundClientObj = clients.find(
-    (client) => client.id === appointmentClient
-  );
+function TherapistAppointmentCard({ date, time, firstName, lastName }) {
   return (
     <div>
       <h4>Date: {date}</h4>
       <h4>Time: {time}</h4>
-      <h4>
-        Client: {`${foundClientObj.first_name} ${foundClientObj.last_name}`}
-      </h4>
+      <h4>Client: {`${firstName} ${lastName}`}</h4>
     </div>
   );
 }

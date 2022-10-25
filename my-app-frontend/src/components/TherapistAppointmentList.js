@@ -1,15 +1,15 @@
 import React from "react";
 import TherapistAppointmentCard from "./TherapistAppointmentCard";
 
-function TherapistAppointmentList({ appointments, clients }) {
+function TherapistAppointmentList({ appointments }) {
   const appointmentCard = appointments.map((appointment) => {
     return (
       <TherapistAppointmentCard
         key={appointment.id}
         date={appointment.date}
         time={appointment.time}
-        appointmentClient={appointment.client_id}
-        clients={clients}
+        firstName={appointment.client.first_name}
+        lastName={appointment.client.last_name}
       />
     );
   });

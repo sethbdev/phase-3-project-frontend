@@ -26,10 +26,7 @@ function TherapistCard({
         {showAppointments ? "Hide Form" : "Appointments"}
       </button>
       {showAppointments ? (
-        <TherapistAppointmentList
-          appointments={appointments}
-          clients={clients}
-        />
+        <TherapistAppointmentList appointments={appointments} />
       ) : null}
     </div>
   );
