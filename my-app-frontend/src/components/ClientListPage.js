@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ClientListPage = () => {
+function ClientListPage () {
   return (
     <div>ClientList</div>
   )

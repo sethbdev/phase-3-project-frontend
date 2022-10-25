@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const Navbar = () => {
+function Navbar () {
   return (
     <div className="navbar">
       <div className="navbar-inner">
