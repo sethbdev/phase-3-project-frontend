@@ -17,9 +17,6 @@ function App() {
     <div className="App">
       <Navbar />
       <Switch>
-        <Route exact path="/">
-          <App />
-        </Route>
         <Route exact path="/therapists">
           <TherapistListPage />
         </Route>

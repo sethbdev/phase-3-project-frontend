@@ -8,13 +8,13 @@ const Navbar = () => {
         <NavLink to="/">
           <button className="navbar-button">Home</button>
         </NavLink>  
-        <NavLink exact to="/costumes">
+        <NavLink exact to="/therapists">
           <button className="navbar-button">Therapists</button>
         </NavLink>
-        <NavLink exact to="/stories">
+        <NavLink exact to="/clients">
           <button className="navbar-button">Clients</button>
         </NavLink>
-        <NavLink exact to="/newstory">
+        <NavLink exact to="/newclient">
           <button className="navbar-button">Add Client</button>
         </NavLink>
       </div>
