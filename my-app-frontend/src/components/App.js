@@ -1,50 +1,31 @@
-import React from "react";
-import { Route, Switch } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import "../index.css";
-import Navbar from "./Navbar";
+
 import TherapistListPage from "./TherapistListPage";
-import ClientListPage from "./ClientListPage";
-import NewTherapistForm from "./NewTherapistForm";
-import NewClientForm from "./NewClientForm";
-import UpdateTherapistForClientForm from "./UpdateTherapistForClientForm";
-import Redirect from "./Redirect.js";
-import ClientCard from './ClientCard';
-import TherapistCard from './TherapistCard';
 
 function App() {
+  let [therapists, setTherapists] = useState([]);
+  let [clients, setClients] = useState([]);
+  let [appointments, setAppointments] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:9292/therapists")
+      .then((res) => res.json())
+      .then((data) => setTherapists(data));
+
+    fetch("http://localhost:9292/clients")
+      .then((res) => res.json())
+      .then((data) => setClients(data));
+
+    fetch("http://localhost:9292/appointments")
+      .then((res) => res.json())
+      .then((data) => setAppointments(data));
+  }, []);
+
   return (
     <div className="App">
-      <Navbar />
-      <Switch>
-        <Route exact path="/">
-          <App />
-        </Route>
-        <Route exact path="/therapists">
-          <TherapistListPage />
-        </Route>
-        <Route exact path="/clients">
-          <ClientListPage />
-        </Route>
-        <Route exact path="/client/:id">
-          <ClientCard />
-        </Route>
-        <Route exact path="/therapist/:id">
-          <TherapistCard />
-        </Route>
-        <Route exact path="/newclient">
-          <NewClientForm />
-        </Route>
-        <Route exact path="/newtherapist">
-          <NewTherapistForm />
-        </Route>
-        <Route exact path="/updatetherapistforclientform">
-          <UpdateTherapistForClientForm />
-        </Route>
-        <Route path="*">
-          <Redirect />
-        </Route>
-      </Switch>
+      <TherapistListPage therapists={therapists} />
     </div>
   );
 }

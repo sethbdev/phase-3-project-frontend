@@ -1,9 +1,22 @@
-import React from 'react'
+import React from "react";
+import TherapistCard from "./TherapistCard";
 
-const TherapistListPage = () => {
-  return (
-    <div>TherapistList</div>
-  )
+function TherapistListPage({ therapists }) {
+  const therapistCard = therapists.map((therapist) => {
+    return (
+      <TherapistCard
+        key={therapist.id}
+        firstName={therapist.first_name}
+        lastName={therapist.last_name}
+        licensure={therapist.licensure}
+        experience={therapist.years_of_experience}
+        appointments={therapist.appointments}
+        clients={therapist.clients}
+      />
+    );
+  });
+
+  return <div>{therapistCard}</div>;
 }
 
-export default TherapistListPage
+export default TherapistListPage;
