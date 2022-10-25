@@ -2,7 +2,7 @@ import React from 'react'
 
 /* UpdateTherapistForClientForm, send PATCH request to /clients/:id */
 
-const UpdateTherapistForClientForm = () => {
+function UpdateTherapistForClientForm () {
   return (
     <div>UpdateTherapistForClientForm</div>
   )

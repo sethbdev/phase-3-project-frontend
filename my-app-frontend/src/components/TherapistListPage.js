@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TherapistListPage = () => {
+function TherapistListPage () {
   return (
     <div>TherapistList</div>
   )
