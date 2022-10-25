@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Redirect = () => {
+function Redirect () {
   return (
     <div>
       <h1 className="redirect-message">You have found the Twilight Zone!</h1>
