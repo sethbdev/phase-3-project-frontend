@@ -9,7 +9,7 @@ function TherapistCard({
   licensure,
   experience,
   appointments,
-  clients,
+  deleteTherapistAppointment,
 }) {
   let [showAppointments, setShowAppointments] = useState(false);
 
@@ -26,7 +26,10 @@ function TherapistCard({
         {showAppointments ? "Hide Form" : "Appointments"}
       </button>
       {showAppointments ? (
-        <TherapistAppointmentList appointments={appointments} />
+        <TherapistAppointmentList
+          appointments={appointments}
+          deleteTherapistAppointment={deleteTherapistAppointment}
+        />
       ) : null}
     </div>
   );

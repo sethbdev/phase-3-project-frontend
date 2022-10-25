@@ -28,9 +28,20 @@ function App() {
     setAppointments(obj);
   }
 
+  function deleteTherapistAppointment(obj) {
+    const filteredAppointmentsArray = appointments.filter(
+      (appointment) => appointment.id !== obj.id
+    );
+
+    setAppointments(filteredAppointmentsArray);
+  }
+
   return (
     <div className="App">
-      <TherapistListPage therapists={therapists} />
+      <TherapistListPage
+        therapists={therapists}
+        deleteTherapistAppointment={deleteTherapistAppointment}
+      />
       <NewAppointmentForm
         therapists={therapists}
         clients={clients}

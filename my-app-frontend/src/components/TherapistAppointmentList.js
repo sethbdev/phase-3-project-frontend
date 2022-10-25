@@ -1,7 +1,10 @@
 import React from "react";
 import TherapistAppointmentCard from "./TherapistAppointmentCard";
 
-function TherapistAppointmentList({ appointments }) {
+function TherapistAppointmentList({
+  appointments,
+  deleteTherapistAppointment,
+}) {
   const appointmentCard = appointments.map((appointment) => {
     return (
       <TherapistAppointmentCard
@@ -10,6 +13,8 @@ function TherapistAppointmentList({ appointments }) {
         time={appointment.time}
         firstName={appointment.client.first_name}
         lastName={appointment.client.last_name}
+        id={appointment.id}
+        deleteTherapistAppointment={deleteTherapistAppointment}
       />
     );
   });
