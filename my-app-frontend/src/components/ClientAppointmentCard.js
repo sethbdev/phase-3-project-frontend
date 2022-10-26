@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import UpdateAppointment from "./UpdateAppointment";
 
-function TherapistAppointmentCard({
+function ClientAppointmentCard({
   date,
   time,
   firstName,
@@ -24,7 +24,7 @@ function TherapistAppointmentCard({
   }
   return (
     <div>
-      <h4>Client: {`${firstName} ${lastName}`}</h4>
+      <h4>Therapist: {`${firstName} ${lastName}`}</h4>
       <h5>Date: {date}</h5>
       <h5>Time: {time}</h5>
       <button
@@ -45,4 +45,4 @@ function TherapistAppointmentCard({
   );
 }
 
-export default TherapistAppointmentCard;
+export default ClientAppointmentCard;

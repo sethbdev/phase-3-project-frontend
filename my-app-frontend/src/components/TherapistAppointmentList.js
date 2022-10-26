@@ -2,10 +2,11 @@ import React from "react";
 import TherapistAppointmentCard from "./TherapistAppointmentCard";
 
 function TherapistAppointmentList({
-  appointments,
-  deleteTherapistAppointment,
+  therapistAppointments,
+  updateAppointment,
+  deleteAppointment,
 }) {
-  const appointmentCard = appointments.map((appointment) => {
+  const appointmentCard = therapistAppointments.map((appointment) => {
     return (
       <TherapistAppointmentCard
         key={appointment.id}
@@ -14,7 +15,8 @@ function TherapistAppointmentList({
         firstName={appointment.client.first_name}
         lastName={appointment.client.last_name}
         id={appointment.id}
-        deleteTherapistAppointment={deleteTherapistAppointment}
+        updateAppointment={updateAppointment}
+        deleteAppointment={deleteAppointment}
       />
     );
   });

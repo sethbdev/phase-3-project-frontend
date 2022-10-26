@@ -9,9 +9,14 @@ function TherapistCard({
   licensure,
   experience,
   appointments,
-  deleteTherapistAppointment,
+  updateAppointment,
+  deleteAppointment,
+  therapistId,
 }) {
-  let [showAppointments, setShowAppointments] = useState(false);
+  const [showAppointments, setShowAppointments] = useState(false);
+  const therapistAppointments = appointments.filter((appointment) => {
+    return appointment.therapist_id === therapistId;
+  });
 
   return (
     <div>
@@ -27,8 +32,9 @@ function TherapistCard({
       </button>
       {showAppointments ? (
         <TherapistAppointmentList
-          appointments={appointments}
-          deleteTherapistAppointment={deleteTherapistAppointment}
+          therapistAppointments={therapistAppointments}
+          updateAppointment={updateAppointment}
+          deleteAppointment={deleteAppointment}
         />
       ) : null}
     </div>
