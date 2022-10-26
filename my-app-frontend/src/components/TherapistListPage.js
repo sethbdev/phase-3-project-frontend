@@ -1,23 +1,36 @@
 import React from "react";
 import TherapistCard from "./TherapistCard";
+import NewTherapistForm from "./NewTherapistForm";
 
-function TherapistListPage({ therapists, deleteTherapistAppointment }) {
+function TherapistListPage({
+  therapists,
+  updateAppointment,
+  deleteAppointment,
+  appointments,
+  addNewTherapist,
+}) {
   const therapistCard = therapists.map((therapist) => {
     return (
       <TherapistCard
         key={therapist.id}
+        therapistId={therapist.id}
         firstName={therapist.first_name}
         lastName={therapist.last_name}
         licensure={therapist.licensure}
         experience={therapist.years_of_experience}
-        appointments={therapist.appointments}
-        clients={therapist.clients}
-        deleteTherapistAppointment={deleteTherapistAppointment}
+        appointments={appointments}
+        updateAppointment={updateAppointment}
+        deleteAppointment={deleteAppointment}
       />
     );
   });
 
-  return <div>{therapistCard}</div>;
+  return (
+    <div>
+      {therapistCard}
+      <NewTherapistForm addNewTherapist={addNewTherapist} />
+    </div>
+  );
 }
 
 export default TherapistListPage;
