@@ -29,20 +29,25 @@ function NewTherapistForm({ addNewTherapist }) {
   }
   return (
     <div>
-      <h2>Add New Therapist: </h2>
-      <form onSubmit={handleNewTherapist}>
-        <label>First Name:</label>
+      <h2 className="form-title">Add New Therapist: </h2>
+      <form className="new-form" onSubmit={handleNewTherapist}>
+        <label className="new-label">First Name:</label>
         <input
+          className="new-inputs"
           type="text"
           onChange={(e) => setFirstName(e.target.value)}
         ></input>
-        <label>Last Name:</label>
+        <label className="new-label">Last Name:</label>
         <input
+          className="new-inputs"
           type="text"
           onChange={(e) => setLastName(e.target.value)}
         ></input>
-        <label>Licensure:</label>
-        <select onChange={(e) => setLicensure(e.target.value)}>
+        <label className="new-label">Licensure:</label>
+        <select
+          className="new-inputs"
+          onChange={(e) => setLicensure(e.target.value)}
+        >
           <option>Select:</option>
           <option value="LPC">LPC</option>
           <option value="LMFT">LMFT</option>
@@ -50,12 +55,13 @@ function NewTherapistForm({ addNewTherapist }) {
           <option value="PHD">PHD</option>
           <option value="PsyD">PsyD</option>
         </select>
-        <label>Years of experience: </label>
+        <label className="new-label">Years of experience: </label>
         <input
+          className="new-inputs"
           type="number"
           onChange={(e) => setExperience(e.target.value)}
         ></input>
-        <input type="submit"></input>
+        <input className="form-button" type="submit"></input>
       </form>
     </div>
   );

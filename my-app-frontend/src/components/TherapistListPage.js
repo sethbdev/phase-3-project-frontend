@@ -27,7 +27,7 @@ function TherapistListPage({
 
   return (
     <div>
-      {therapistCard}
+      <div className="card-list">{therapistCard}</div>
       <NewTherapistForm addNewTherapist={addNewTherapist} />
     </div>
   );

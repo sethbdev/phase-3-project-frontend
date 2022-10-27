@@ -73,43 +73,41 @@ function App() {
   }
 
   return (
-    <div className="App"> 
-      <div>
+    <div className="App">
+      <div class="">
         <Navbar />
         <Switch>
-          
           <Route path="/therapists">
             <TherapistListPage
-            therapists={therapists}
-            updateAppointment={updateAppointment}
-            deleteAppointment={deleteAppointment}
-            appointments={appointments}
-            addNewTherapist={addNewTherapist}
+              therapists={therapists}
+              updateAppointment={updateAppointment}
+              deleteAppointment={deleteAppointment}
+              appointments={appointments}
+              addNewTherapist={addNewTherapist}
             />
           </Route>
-            <Route path="/newappointment">
+          <Route path="/newappointment">
             <NewAppointmentForm
-            therapists={therapists}
-            clients={clients}
-            appointments={appointments}
-            addNewAppointment={addNewAppointment}
+              therapists={therapists}
+              clients={clients}
+              appointments={appointments}
+              addNewAppointment={addNewAppointment}
             />
           </Route>
           <Route path="/clients">
             <ClientListPage
-            clients={clients}
-            appointments={appointments}
-            updateAppointment={updateAppointment}
-            deleteAppointment={deleteAppointment}
-            addNewClient={addNewClient}
+              clients={clients}
+              appointments={appointments}
+              updateAppointment={updateAppointment}
+              deleteAppointment={deleteAppointment}
+              addNewClient={addNewClient}
             />
           </Route>
 
           <Route exact path="/">
-            <DailyAppointmentsPage appointments={appointments}/>
+            <DailyAppointmentsPage appointments={appointments} />
           </Route>
         </Switch>
-
       </div>
     </div>
   );

@@ -28,6 +28,7 @@ function TherapistAppointmentCard({
       <h5>Date: {date}</h5>
       <h5>Time: {time}</h5>
       <button
+        className="card-button"
         onClick={() => setShowUpdateForm((showUpdateForm) => !showUpdateForm)}
       >
         {showUpdateForm ? "Hide Update" : "Update"}
@@ -40,7 +41,9 @@ function TherapistAppointmentCard({
           updateAppointment={updateAppointment}
         />
       ) : null}
-      <button onClick={handleAppointmentDelete}>Delete</button>
+      <button className="card-button" onClick={handleAppointmentDelete}>
+        Delete
+      </button>
     </div>
   );
 }

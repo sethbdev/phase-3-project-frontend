@@ -37,14 +37,25 @@ function NewAppointmentForm({
 
   return (
     <div>
-      <h2>Create New Appointment</h2>
-      <form onSubmit={handleSubmit}>
-        <label>Date:</label>
-        <input type="date" onChange={(e) => setDate(e.target.value)}></input>
+      <h2 className="form-title">Create New Appointment</h2>
+      <form className="new-form" onSubmit={handleSubmit}>
+        <label className="new-label">Date:</label>
+        <input
+          className="new-inputs"
+          type="date"
+          onChange={(e) => setDate(e.target.value)}
+        ></input>
         <label>Time:</label>
-        <input type="time" onChange={(e) => setTime(e.target.value)}></input>
-        <label>Choose a therapist:</label>
-        <select onChange={(e) => setNewAppointmentTherapist(e.target.value)}>
+        <input
+          className="new-inputs"
+          type="time"
+          onChange={(e) => setTime(e.target.value)}
+        ></input>
+        <label className="new-label">Choose a therapist:</label>
+        <select
+          className="new-inputs"
+          onChange={(e) => setNewAppointmentTherapist(e.target.value)}
+        >
           <option>Select Therapist: </option>
           {therapists.map((therapist) => {
             return (
@@ -54,8 +65,11 @@ function NewAppointmentForm({
             );
           })}
         </select>
-        <label>Choose a client:</label>
-        <select onChange={(e) => setNewAppointmentClient(e.target.value)}>
+        <label className="new-label">Choose a client:</label>
+        <select
+          className="new-inputs"
+          onChange={(e) => setNewAppointmentClient(e.target.value)}
+        >
           <option>Select Client:</option>
           {clients.map((client) => {
             return (
@@ -66,7 +80,7 @@ function NewAppointmentForm({
             );
           })}
         </select>
-        <input type="submit"></input>
+        <input className="form-button" type="submit"></input>
       </form>
     </div>
   );

@@ -23,7 +23,7 @@ function ClientListPage({
   });
   return (
     <div>
-      {clientCard}
+      <div className="card-list">{clientCard}</div>
       <NewClientForm addNewClient={addNewClient} />
     </div>
   );

@@ -25,9 +25,15 @@ function DailyAppointmentsPage({ appointments }) {
   });
   return (
     <div>
-      <label>Select Date:</label>
-      <input type="date" onChange={(e) => setTodayDate(e.target.value)}></input>
-      {appointmentCard}
+      <div className="new-form">
+        <label className="new-label">Select Date:</label>
+        <input
+          className="new-inputs"
+          type="date"
+          onChange={(e) => setTodayDate(e.target.value)}
+        ></input>
+      </div>
+      <div className="appointment-list">{appointmentCard}</div>
     </div>
   );
 }

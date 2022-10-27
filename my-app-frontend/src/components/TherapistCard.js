@@ -19,16 +19,17 @@ function TherapistCard({
   });
 
   return (
-    <div>
+    <div className="card">
       <h2>{`${firstName} ${lastName}`}</h2>
       <h3>Licensure: {licensure}</h3>
       <h3>Experience: {experience} years</h3>
       <button
+        className="card-button"
         onClick={() =>
           setShowAppointments((showAppointments) => !showAppointments)
         }
       >
-        {showAppointments ? "Hide Form" : "Appointments"}
+        {showAppointments ? "Hide Appointments" : "Appointments"}
       </button>
       {showAppointments ? (
         <TherapistAppointmentList

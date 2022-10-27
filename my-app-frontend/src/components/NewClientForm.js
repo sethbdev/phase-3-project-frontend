@@ -25,19 +25,21 @@ function NewClientForm({ addNewClient }) {
   }
   return (
     <div>
-      <h2>Create New Client: </h2>
-      <form onSubmit={handleNewClient}>
-        <label>First Name:</label>
+      <h2 className="form-title">Create New Client: </h2>
+      <form className="new-form" onSubmit={handleNewClient}>
+        <label className="new-label">First Name:</label>
         <input
+          className="new-inputs"
           type="text"
           onChange={(e) => setNewClientFirstName(e.target.value)}
         ></input>
-        <label>Last Name: </label>
+        <label className="new-label">Last Name: </label>
         <input
+          className="new-inputs"
           type="text"
           onChange={(e) => setNewClientLastName(e.target.value)}
         ></input>
-        <input type="submit"></input>
+        <input className="form-button" type="submit"></input>
       </form>
     </div>
   );
