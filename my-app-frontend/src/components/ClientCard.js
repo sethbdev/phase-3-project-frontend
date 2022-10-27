@@ -15,9 +15,10 @@ function ClientCard({
     return appointment.client_id === clientId;
   });
   return (
-    <div>
+    <div className="card">
       <h2>{name}</h2>
       <button
+        className="card-button"
         onClick={() =>
           setShowAppointments((showAppointments) => !showAppointments)
         }
