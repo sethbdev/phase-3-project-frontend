@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { Route, Switch } from "react-router-dom";
 import "./App.css";
 import "../index.css";
-
+import Navbar from "./Navbar";
 import TherapistListPage from "./TherapistListPage";
 import NewAppointmentForm from "./NewAppointmentForm";
 import ClientListPage from "./ClientListPage";
@@ -72,28 +73,44 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <TherapistListPage
-        therapists={therapists}
-        updateAppointment={updateAppointment}
-        deleteAppointment={deleteAppointment}
-        appointments={appointments}
-        addNewTherapist={addNewTherapist}
-      />
-      <NewAppointmentForm
-        therapists={therapists}
-        clients={clients}
-        appointments={appointments}
-        addNewAppointment={addNewAppointment}
-      />
-      <ClientListPage
-        clients={clients}
-        appointments={appointments}
-        updateAppointment={updateAppointment}
-        deleteAppointment={deleteAppointment}
-        addNewClient={addNewClient}
-      />
-      <DailyAppointmentsPage appointments={appointments} />
+    <div className="App"> 
+      <div>
+        <Navbar />
+        <Switch>
+          
+          <Route path="/therapists">
+            <TherapistListPage
+            therapists={therapists}
+            updateAppointment={updateAppointment}
+            deleteAppointment={deleteAppointment}
+            appointments={appointments}
+            addNewTherapist={addNewTherapist}
+            />
+          </Route>
+            <Route path="/newappointment">
+            <NewAppointmentForm
+            therapists={therapists}
+            clients={clients}
+            appointments={appointments}
+            addNewAppointment={addNewAppointment}
+            />
+          </Route>
+          <Route path="/clients">
+            <ClientListPage
+            clients={clients}
+            appointments={appointments}
+            updateAppointment={updateAppointment}
+            deleteAppointment={deleteAppointment}
+            addNewClient={addNewClient}
+            />
+          </Route>
+
+          <Route exact path="/">
+            <DailyAppointmentsPage appointments={appointments}/>
+          </Route>
+        </Switch>
+
+      </div>
     </div>
   );
 }

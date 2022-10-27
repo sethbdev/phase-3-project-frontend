@@ -14,8 +14,8 @@ function Navbar () {
         <NavLink exact to="/clients">
           <button className="navbar-button">Clients</button>
         </NavLink>
-        <NavLink exact to="/newclient">
-          <button className="navbar-button">Add Client</button>
+        <NavLink exact to="/newappointment">
+          <button className="navbar-button">Add Appointment</button>
         </NavLink>
       </div>
     </div>
