@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 function Navbar() {
   return (
     <div className="header">
-      <h1 className="logo">Grow Therapy</h1>
+      <h1 class="text-3xl font-bold underline">Grow Therapy</h1>
       <NavLink to="/">
         <button className="card-button">Home</button>
       </NavLink>
