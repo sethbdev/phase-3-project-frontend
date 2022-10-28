@@ -1,4 +1,9 @@
 import React, { useState } from "react";
+import Typography from "@mui/material/Typography";
+import Select from "@mui/material/Select";
+import MenuItem from "@mui/material/MenuItem";
+import Container from "@mui/material/Container";
+import TextField from "@mui/material/TextField";
 
 /* NewTherapistForm, send POST request to /therapists */
 
@@ -28,34 +33,35 @@ function NewTherapistForm({ addNewTherapist }) {
       .then((data) => addNewTherapist(data));
   }
   return (
-    <div>
-      <h2 className="form-title">Add New Therapist: </h2>
+    <Container>
+      <Typography variant="h3" className="form-title">
+        Add New Therapist:{" "}
+      </Typography>
       <form className="new-form" onSubmit={handleNewTherapist}>
-        <label className="new-label">First Name:</label>
-        <input
+        <TextField
+          label="First Name"
           className="new-inputs"
           type="text"
           onChange={(e) => setFirstName(e.target.value)}
-        ></input>
-        <label className="new-label">Last Name:</label>
-        <input
+        ></TextField>
+        <TextField
+          label="Last Name"
           className="new-inputs"
           type="text"
           onChange={(e) => setLastName(e.target.value)}
-        ></input>
-        <label className="new-label">Licensure:</label>
-        <select
-          className="new-inputs"
+        ></TextField>
+
+        <Select
+          label="Licensure"
           onChange={(e) => setLicensure(e.target.value)}
         >
-          <option>Select:</option>
-          <option value="LPC">LPC</option>
-          <option value="LMFT">LMFT</option>
-          <option value="LCSW">LCSW</option>
-          <option value="PHD">PHD</option>
-          <option value="PsyD">PsyD</option>
-        </select>
-        <label className="new-label">Years of experience: </label>
+          <MenuItem>Select:</MenuItem>
+          <MenuItem value="LPC">LPC</MenuItem>
+          <MenuItem value="LMFT">LMFT</MenuItem>
+          <MenuItem value="LCSW">LCSW</MenuItem>
+          <MenuItem value="PHD">PHD</MenuItem>
+          <MenuItem value="PsyD">PsyD</MenuItem>
+        </Select>
         <input
           className="new-inputs"
           type="number"
@@ -63,7 +69,7 @@ function NewTherapistForm({ addNewTherapist }) {
         ></input>
         <input className="form-button" type="submit"></input>
       </form>
-    </div>
+    </Container>
   );
 }
 

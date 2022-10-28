@@ -1,5 +1,6 @@
 import React from "react";
 import TherapistAppointmentCard from "./TherapistAppointmentCard";
+import Stack from "@mui/material/Stack";
 
 function TherapistAppointmentList({
   therapistAppointments,
@@ -20,7 +21,7 @@ function TherapistAppointmentList({
       />
     );
   });
-  return <div>{appointmentCard}</div>;
+  return <Stack spacing={2}>{appointmentCard}</Stack>;
 }
 
 export default TherapistAppointmentList;

@@ -1,6 +1,10 @@
 import React from "react";
 import TherapistCard from "./TherapistCard";
 import NewTherapistForm from "./NewTherapistForm";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+
+import Grid from "@mui/material/Grid";
 
 function TherapistListPage({
   therapists,
@@ -26,10 +30,12 @@ function TherapistListPage({
   });
 
   return (
-    <div>
-      <div className="card-list">{therapistCard}</div>
+    <Container>
+      <Grid container spacing={4} justifyContent="flex-start">
+        {therapistCard}
+      </Grid>
       <NewTherapistForm addNewTherapist={addNewTherapist} />
-    </div>
+    </Container>
   );
 }
 

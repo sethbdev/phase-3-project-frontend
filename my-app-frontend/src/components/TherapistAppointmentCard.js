@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 import UpdateAppointment from "./UpdateAppointment";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardActions from "@mui/material/CardActions";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
 
 function TherapistAppointmentCard({
   date,
@@ -23,16 +28,22 @@ function TherapistAppointmentCard({
       });
   }
   return (
-    <div>
-      <h4>Client: {`${firstName} ${lastName}`}</h4>
-      <h5>Date: {date}</h5>
-      <h5>Time: {time}</h5>
-      <button
-        className="card-button"
-        onClick={() => setShowUpdateForm((showUpdateForm) => !showUpdateForm)}
-      >
-        {showUpdateForm ? "Hide Update" : "Update"}
-      </button>
+    <Card>
+      <CardContent>
+        <Typography variant="h5">
+          Client: {`${firstName} ${lastName}`}
+        </Typography>
+        <Typography variant="h7">Date: {date}</Typography>
+        <Typography variant="h7">Time: {time}</Typography>
+      </CardContent>
+      <CardActions>
+        <Button
+          variant="contained"
+          onClick={() => setShowUpdateForm((showUpdateForm) => !showUpdateForm)}
+        >
+          {showUpdateForm ? "Hide Update" : "Update"}
+        </Button>
+      </CardActions>
       {showUpdateForm ? (
         <UpdateAppointment
           date={date}
@@ -41,10 +52,12 @@ function TherapistAppointmentCard({
           updateAppointment={updateAppointment}
         />
       ) : null}
-      <button className="card-button" onClick={handleAppointmentDelete}>
-        Delete
-      </button>
-    </div>
+      <CardActions>
+        <Button variant="contained" onClick={handleAppointmentDelete}>
+          Delete
+        </Button>
+      </CardActions>
+    </Card>
   );
 }
 

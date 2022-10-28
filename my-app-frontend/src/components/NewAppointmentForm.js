@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import Alert from "@mui/material/Alert";
+import Select from "@mui/material/Select";
+import MenuItem from "@mui/material/MenuItem";
 
 function NewAppointmentForm({
   therapists,
@@ -21,7 +24,7 @@ function NewAppointmentForm({
     };
 
     if (newAppointmentTherapist === null && newAppointmentClient === null) {
-      window.alert("Need to select therapist and client");
+      <Alert severity="error">("Need to select therapist and client");</Alert>;
     } else {
       fetch("http://localhost:9292/appointments", {
         method: "POST",
@@ -51,35 +54,34 @@ function NewAppointmentForm({
           type="time"
           onChange={(e) => setTime(e.target.value)}
         ></input>
-        <label className="new-label">Choose a therapist:</label>
-        <select
+        <Select
+          label="Therapist"
           className="new-inputs"
           onChange={(e) => setNewAppointmentTherapist(e.target.value)}
         >
-          <option>Select Therapist: </option>
+          <MenuItem>Select Therapist: </MenuItem>
           {therapists.map((therapist) => {
             return (
-              <option key={therapist.id} value={therapist.id}>
+              <MenuItem key={therapist.id} value={therapist.id}>
                 {`${therapist.first_name} ${therapist.last_name}`}
-              </option>
+              </MenuItem>
             );
           })}
-        </select>
-        <label className="new-label">Choose a client:</label>
-        <select
-          className="new-inputs"
+        </Select>
+        <Select
+          label="Client"
           onChange={(e) => setNewAppointmentClient(e.target.value)}
         >
-          <option>Select Client:</option>
+          <MenuItem>Select Client:</MenuItem>
           {clients.map((client) => {
             return (
-              <option
+              <MenuItem
                 key={client.id}
                 value={client.id}
-              >{`${client.first_name} ${client.last_name}`}</option>
+              >{`${client.first_name} ${client.last_name}`}</MenuItem>
             );
           })}
-        </select>
+        </Select>
         <input className="form-button" type="submit"></input>
       </form>
     </div>

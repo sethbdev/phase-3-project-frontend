@@ -1,5 +1,11 @@
 import React, { useState } from "react";
 import TherapistAppointmentList from "./TherapistAppointmentList";
+import Card from "@mui/material/Card";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import Grid from "@mui/material/Grid";
 
 /*TherapistCard, send DELETE request to /therapist/:id*/
 
@@ -19,26 +25,32 @@ function TherapistCard({
   });
 
   return (
-    <div className="card">
-      <h2>{`${firstName} ${lastName}`}</h2>
-      <h3>Licensure: {licensure}</h3>
-      <h3>Experience: {experience} years</h3>
-      <button
-        className="card-button"
-        onClick={() =>
-          setShowAppointments((showAppointments) => !showAppointments)
-        }
-      >
-        {showAppointments ? "Hide Appointments" : "Appointments"}
-      </button>
-      {showAppointments ? (
-        <TherapistAppointmentList
-          therapistAppointments={therapistAppointments}
-          updateAppointment={updateAppointment}
-          deleteAppointment={deleteAppointment}
-        />
-      ) : null}
-    </div>
+    <Grid item sx={6} md={4}>
+      <Card sx={{ minWidth: 275 }}>
+        <CardContent>
+          <Typography variant="h4">{`${firstName} ${lastName}`}</Typography>
+          <Typography variant="h5">Licensure: {licensure}</Typography>
+          <Typography variant="h5">Experience: {experience} years</Typography>
+        </CardContent>
+        <CardActions>
+          <Button
+            variant="contained"
+            onClick={() =>
+              setShowAppointments((showAppointments) => !showAppointments)
+            }
+          >
+            {showAppointments ? "Hide Appointments" : "Appointments"}
+          </Button>
+        </CardActions>
+        {showAppointments ? (
+          <TherapistAppointmentList
+            therapistAppointments={therapistAppointments}
+            updateAppointment={updateAppointment}
+            deleteAppointment={deleteAppointment}
+          />
+        ) : null}
+      </Card>
+    </Grid>
   );
 }
 
