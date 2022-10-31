@@ -24,22 +24,34 @@ function NewClientForm({ addNewClient }) {
       .then((data) => addNewClient(data));
   }
   return (
-    <div>
-      <h2 className="form-title">Create New Client: </h2>
-      <form className="new-form" onSubmit={handleNewClient}>
-        <label className="new-label">First Name:</label>
+    <div class="bg-green-700 flex flex-col">
+      <h2 class="text-white font-sans font-bold text-2xl flex justify-center align-top pt-6">
+        Create New Client:{" "}
+      </h2>
+      <form
+        class="flex flex-col justify-center items-center pt-5"
+        onSubmit={handleNewClient}
+      >
+        <label class="font-sans font-semibold text-white p-3">
+          First Name:
+        </label>
         <input
-          className="new-inputs"
+          class="rounded-lg p-1 w-60"
           type="text"
           onChange={(e) => setNewClientFirstName(e.target.value)}
         ></input>
-        <label className="new-label">Last Name: </label>
+        <label class="font-sans font-semibold text-white p-3">
+          Last Name:{" "}
+        </label>
         <input
-          className="new-inputs"
+          class="rounded-lg p-1 w-60"
           type="text"
           onChange={(e) => setNewClientLastName(e.target.value)}
         ></input>
-        <input className="form-button" type="submit"></input>
+        <input
+          class="font sans font-bold p-3 text-white text-md bg-green-500 m-4 w-60 rounded-lg hover:bg-green-600"
+          type="submit"
+        ></input>
       </form>
     </div>
   );

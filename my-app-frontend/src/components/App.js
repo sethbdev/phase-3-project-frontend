@@ -41,6 +41,8 @@ function App() {
       .catch(console.error);
   }, []);
 
+  console.log(clients);
+
   function addNewAppointment(obj) {
     setAppointments([...appointments, obj]);
   }

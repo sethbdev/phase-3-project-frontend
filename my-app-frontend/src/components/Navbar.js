@@ -3,19 +3,27 @@ import { NavLink } from "react-router-dom";
 
 function Navbar() {
   return (
-    <div className="header">
-      <h1 className="logo">Grow Therapy</h1>
+    <div class="bg-green-700 flex justify-between p-6 items-center">
+      <h1 class="text-white font-sans font-extrabold text-2xl">Grow Therapy</h1>
       <NavLink to="/">
-        <button className="card-button">Home</button>
+        <button class="text-white font-semibold text-xl p-3 hover:bg-green-900 rounded-xl transition">
+          Home
+        </button>
       </NavLink>
       <NavLink exact to="/therapists">
-        <button className="card-button">Therapists</button>
+        <button class="text-white font-semibold text-xl p-3 hover:bg-green-900 rounded-xl transition">
+          Therapists
+        </button>
       </NavLink>
       <NavLink exact to="/clients">
-        <button className="card-button">Clients</button>
+        <button class="text-white font-semibold text-xl p-3 hover:bg-green-900 rounded-xl transition">
+          Clients
+        </button>
       </NavLink>
       <NavLink exact to="/newappointment">
-        <button className="card-button">Add Appointment</button>
+        <button class="text-white font-semibold text-xl p-3 hover:bg-green-900 rounded-xl transition">
+          Add Appointment
+        </button>
       </NavLink>
     </div>
   );

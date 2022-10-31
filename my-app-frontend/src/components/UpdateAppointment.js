@@ -24,22 +24,25 @@ function UpdateAppointment({ date, time, id, updateAppointment }) {
   }
   return (
     <div>
-      <form class="new-form" onSubmit={handleUpdate}>
-        <label className="new-label">New Date: </label>
+      <form class="flex flex-col m-4 p-4" onSubmit={handleUpdate}>
+        <label class="font-sans text-white font-semibold m-1">New Date: </label>
         <input
-          className="new-inputs"
+          class="p-1 rounded-md m-1"
           type="date"
           placeholder={newDate}
           onChange={(e) => setNewDate(e.target.value)}
         ></input>
-        <label className="new-label">New Time: </label>
+        <label class="font-sans m-1 text-white font-semibold">New Time: </label>
         <input
-          className="new-inputs"
+          class="p-1 rounded-md m-1"
           type="time"
           placeholder={newTime}
           onChange={(e) => setNewTime(e.target.value)}
         ></input>
-        <input className="form-button" type="submit"></input>
+        <input
+          class="text-green-600 bg-white p-2 mt-2 ml-2 rounded-xl hover:bg-green-900"
+          type="submit"
+        ></input>
       </form>
     </div>
   );

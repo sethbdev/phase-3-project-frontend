@@ -24,11 +24,13 @@ function DailyAppointmentsPage({ appointments }) {
     );
   });
   return (
-    <div>
-      <div className="new-form">
-        <label className="new-label">Select Date:</label>
+    <div class="bg-green-700 p-10 m-10 justify-around rounded-2xl items-center">
+      <div class="flex justify-center items-center mb-10 p-6">
+        <label class="p-3 font-sans font-bold text-white text-xl">
+          Select Date:{" "}
+        </label>
         <input
-          className="new-inputs"
+          class="p-3 rounded-xl"
           type="date"
           onChange={(e) => setTodayDate(e.target.value)}
         ></input>

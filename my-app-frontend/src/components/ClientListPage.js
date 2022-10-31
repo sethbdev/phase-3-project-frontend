@@ -23,7 +23,9 @@ function ClientListPage({
   });
   return (
     <div>
-      <div className="card-list">{clientCard}</div>
+      <div class="bg-green-700 p-10 m-10 justify-around rounded-2xl items-center">
+        {clientCard}
+      </div>
       <NewClientForm addNewClient={addNewClient} />
     </div>
   );

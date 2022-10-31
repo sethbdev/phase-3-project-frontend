@@ -23,12 +23,14 @@ function ClientAppointmentCard({
       });
   }
   return (
-    <div>
-      <h4>Therapist: {`${firstName} ${lastName}`}</h4>
-      <h5>Date: {date}</h5>
-      <h5>Time: {time}</h5>
+    <div class="m-6 bg-green-500 p-6 rounded-xl">
+      <h4 class="font-sans text-white font-bold text-2xl">
+        {`${firstName} ${lastName}`}
+      </h4>
+      <h5 class="font-sans text-white font-semibold">{date}</h5>
+      <h5 class="font-sans text-white font-semibold">{time}</h5>
       <button
-        className="card-button"
+        class="text-green-600 bg-white p-2 mt-2 mr-2 rounded-xl hover:bg-green-900"
         onClick={() => setShowUpdateForm((showUpdateForm) => !showUpdateForm)}
       >
         {showUpdateForm ? "Hide Update" : "Update"}
@@ -41,7 +43,10 @@ function ClientAppointmentCard({
           updateAppointment={updateAppointment}
         />
       ) : null}
-      <button className="card-button" onClick={handleAppointmentDelete}>
+      <button
+        class="text-green-600 bg-white p-2 mt-2 mr-2 rounded-xl hover:bg-green-900"
+        onClick={handleAppointmentDelete}
+      >
         Delete
       </button>
     </div>
