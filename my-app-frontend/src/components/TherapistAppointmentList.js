@@ -20,7 +20,11 @@ function TherapistAppointmentList({
       />
     );
   });
-  return <div>{appointmentCard}</div>;
+  return (
+    <div class="p-2 m-1 flex flex-col justify-around rounded-2xl items-centers">
+      {appointmentCard}
+    </div>
+  );
 }
 
 export default TherapistAppointmentList;

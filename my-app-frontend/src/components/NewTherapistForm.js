@@ -28,24 +28,31 @@ function NewTherapistForm({ addNewTherapist }) {
       .then((data) => addNewTherapist(data));
   }
   return (
-    <div>
-      <h2 className="form-title">Add New Therapist: </h2>
-      <form className="new-form" onSubmit={handleNewTherapist}>
-        <label className="new-label">First Name:</label>
+    <div class="bg-green-700 flex flex-col">
+      <h2 class="text-white font-sans font-bold text-2xl flex justify-center align-top pt-6">
+        Add New Therapist:{" "}
+      </h2>
+      <form
+        class="flex flex-col justify-center items-center pt-5"
+        onSubmit={handleNewTherapist}
+      >
+        <label class="font-sans font-semibold text-white p-3">
+          First Name:
+        </label>
         <input
-          className="new-inputs"
+          class="rounded-lg p-1 w-60"
           type="text"
           onChange={(e) => setFirstName(e.target.value)}
         ></input>
-        <label className="new-label">Last Name:</label>
+        <label class="font-sans font-semibold text-white p-3">Last Name:</label>
         <input
-          className="new-inputs"
+          class="rounded-lg p-1 w-60"
           type="text"
           onChange={(e) => setLastName(e.target.value)}
         ></input>
-        <label className="new-label">Licensure:</label>
+        <label class="font-sans font-semibold text-white p-3">Licensure:</label>
         <select
-          className="new-inputs"
+          class="rounded-lg p-1 w-60"
           onChange={(e) => setLicensure(e.target.value)}
         >
           <option>Select:</option>
@@ -55,13 +62,18 @@ function NewTherapistForm({ addNewTherapist }) {
           <option value="PHD">PHD</option>
           <option value="PsyD">PsyD</option>
         </select>
-        <label className="new-label">Years of experience: </label>
+        <label class="font-sans font-semibold text-white p-3">
+          Years of experience:{" "}
+        </label>
         <input
-          className="new-inputs"
+          class="rounded-lg p-1 w-60"
           type="number"
           onChange={(e) => setExperience(e.target.value)}
         ></input>
-        <input className="form-button" type="submit"></input>
+        <input
+          class="font sans font-bold p-3 text-white text-md bg-green-500 m-4 w-60 rounded-lg hover:bg-green-600"
+          type="submit"
+        ></input>
       </form>
     </div>
   );
